@@ -26,24 +26,20 @@ class WelcomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center, // Centrado vertical
+            mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-              // Logo del aeropuerto
               Image.asset(
                 'assets/AIQ_LOGO.png',
-                width: 230,
+                width: 300,
                 fit: BoxFit.contain,
               ),
-
               const SizedBox(height: 40),
-              // Avión con fondo circular degradado
               SizedBox(
                 height: 400,
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
-                    // Círculo degradado
                     Container(
                       width: 220,
                       height: 220,
@@ -59,7 +55,6 @@ class WelcomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    // Imagen del avión
                     Image.asset(
                       'assets/Avion-one.png',
                       fit: BoxFit.contain,
@@ -68,10 +63,7 @@ class WelcomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
-
               const SizedBox(height: 50),
-
-              // Botón "COMENZAR"
               ElevatedButton(
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
@@ -92,7 +84,7 @@ class WelcomeScreen extends StatelessWidget {
                   'COMENZAR',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 13,
+                    fontSize: 20,
                     letterSpacing: 1.5,
                     fontFamily: 'Avenir',
                   ),

@@ -21,4 +21,8 @@ flutter:
   assets:
     - assets/AIQ_LOGO.png
     - assets/Avion-one.png
-  
+
+  fonts:
+    - family: Avenir
+      fonts:
+        - asset: assets/font/AvenirLTStd-Black.otf
