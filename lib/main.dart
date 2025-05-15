@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'forms_select.dart'; // Ya sin espacio
 
 void main() {
   runApp(const MainApp());
@@ -66,9 +67,10 @@ class WelcomeScreen extends StatelessWidget {
               const SizedBox(height: 50),
               ElevatedButton(
                 onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Bienvenido al Aeropuerto Intercontinental de Querétaro'),
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const FormularioScreen(),
                     ),
                   );
                 },
