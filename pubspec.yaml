@@ -1,19 +1,20 @@
 name: interfaz_uno_aiq
-description: "A new Flutter project."
-publish_to: 'none'
+description: A new Flutter project.
+publish_to: none
 version: 0.1.0
 
 environment:
-  sdk: ^3.6.1
+  sdk: ">=3.6.1 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
+  carousel_slider: ^5.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  flutter_lints: ^2.0.0
 
 flutter:
   uses-material-design: true
@@ -21,9 +22,13 @@ flutter:
   assets:
     - assets/AIQ_LOGO.png
     - assets/Avion-one.png
+<<<<<<< HEAD
     - assets/Avion-bg.png
     - assets/Avion-bg2.png
     - assets/Avion-bg3.png
+=======
+    - assets/airbus.png
+>>>>>>> a8378bc2fe5f1c289f00d53f44b72a72e99b649b
 
   fonts:
     - family: Avenir
