@@ -22,75 +22,75 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFD5DAED),
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Image.asset(
-                'assets/AIQ_LOGO.png',
-                width: 300,
-                fit: BoxFit.contain,
-              ),
-              const SizedBox(height: 40),
-              SizedBox(
-                height: 400,
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Container(
-                      width: 220,
-                      height: 220,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        gradient: RadialGradient(
-                          colors: [
-                            Color.fromARGB(255, 246, 246, 247),
-                            Color(0xFFD5DAED),
-                          ],
-                          center: Alignment.center,
-                          radius: 0.55,
-                        ),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/Avion-bg3.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: SingleChildScrollView(
+          child: SizedBox(
+            width: double.infinity,
+            height: MediaQuery.of(context).size.height, // Fuerza altura de pantalla
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Image.asset(
+                    'assets/AIQ_LOGO.png',
+                    width: 440,
+                    fit: BoxFit.contain,
+                  ),
+                  const SizedBox(height: 450),
+                  ElevatedButton(
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+  SnackBar(
+    content: const Text(
+      'Bienvenido al Aeropuerto Intercontinental de Querétaro',
+      style: TextStyle(
+        color: Color.fromARGB(255, 35, 50, 88),
+        fontSize: 15,
+        fontWeight: FontWeight.bold,
+        fontFamily: 'Avenir',
+      ),
+    ),
+    backgroundColor: const Color.fromARGB(255, 226, 235, 247), // Fondo azul oscuro
+    elevation: 2,
+    behavior: SnackBarBehavior.floating, // Se despega de la parte inferior
+    margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(15),
+    ),
+    duration: const Duration(seconds: 3),
+  ),
+);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 31, 56, 88),
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
                       ),
                     ),
-                    Image.asset(
-                      'assets/Avion-one.png',
-                      fit: BoxFit.contain,
-                      width: 450,
+                    child: const Text(
+                      'COMENZAR',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        letterSpacing: 1.5,
+                        fontFamily: 'Avenir',
+                      ),
                     ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 50),
-              ElevatedButton(
-                onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Bienvenido al Aeropuerto Intercontinental de Querétaro'),
-                    ),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF1F3A5F),
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
                   ),
-                ),
-                child: const Text(
-                  'COMENZAR',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                    letterSpacing: 1.5,
-                    fontFamily: 'Avenir',
-                  ),
-                ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),
