@@ -22,13 +22,10 @@ flutter:
   assets:
     - assets/AIQ_LOGO.png
     - assets/Avion-one.png
-<<<<<<< HEAD
     - assets/Avion-bg.png
     - assets/Avion-bg2.png
     - assets/Avion-bg3.png
-=======
     - assets/airbus.png
->>>>>>> a8378bc2fe5f1c289f00d53f44b72a72e99b649b
 
   fonts:
     - family: Avenir

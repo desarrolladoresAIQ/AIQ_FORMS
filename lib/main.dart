@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'forms_select.dart'; // Ya sin espacio
+import 'forms_select.dart'; // Asegúrate de que FormsSelect esté definido en este archivo
 
 void main() {
   runApp(const MainApp());
@@ -35,11 +35,10 @@ class WelcomeScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: SizedBox(
             width: double.infinity,
-            height: MediaQuery.of(context).size.height, // Fuerza altura de pantalla
+            height: MediaQuery.of(context).size.height,
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
                 children: [
                   Image.asset(
                     'assets/AIQ_LOGO.png',
@@ -49,27 +48,38 @@ class WelcomeScreen extends StatelessWidget {
                   const SizedBox(height: 450),
                   ElevatedButton(
                     onPressed: () {
+                      // Mostrar mensaje
                       ScaffoldMessenger.of(context).showSnackBar(
-  SnackBar(
-    content: const Text(
-      'Bienvenido al Aeropuerto Intercontinental de Querétaro',
-      style: TextStyle(
-        color: Color.fromARGB(255, 35, 50, 88),
-        fontSize: 15,
-        fontWeight: FontWeight.bold,
-        fontFamily: 'Avenir',
-      ),
-    ),
-    backgroundColor: const Color.fromARGB(255, 226, 235, 247), // Fondo azul oscuro
-    elevation: 2,
-    behavior: SnackBarBehavior.floating, // Se despega de la parte inferior
-    margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(15),
-    ),
-    duration: const Duration(seconds: 3),
-  ),
-);
+                        SnackBar(
+                          content: const Text(
+                            'Bienvenido al Aeropuerto Intercontinental de Querétaro',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 35, 50, 88),
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Avenir',
+                            ),
+                          ),
+                          backgroundColor: const Color.fromARGB(255, 226, 235, 247),
+                          elevation: 2,
+                          behavior: SnackBarBehavior.floating,
+                          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          duration: const Duration(seconds: 3),
+                        ),
+                      );
+
+                      // Navegar después de un pequeño retraso para que se vea el SnackBar
+                      Future.delayed(const Duration(milliseconds: 500), () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const FormularioScreen(),
+                          ),
+                        );
+                      });
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromARGB(255, 31, 56, 88),
