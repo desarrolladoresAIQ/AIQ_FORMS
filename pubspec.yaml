@@ -23,7 +23,8 @@ flutter:
     - assets/AIQ_LOGO.png
     - assets/Avion-one.png
     - assets/airbus.png
-
+    - assets/derrames_form.png
+    
   fonts:
     - family: Avenir
       fonts:
