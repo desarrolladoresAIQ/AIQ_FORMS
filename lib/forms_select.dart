@@ -78,7 +78,8 @@ class _FormularioScreenState extends State<FormularioScreen> {
                   "<",
                   style: TextStyle(
                     fontSize: 28,
-                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Impact',
+                    fontWeight: FontWeight.normal,
                     color: Color(0xFF103A63),
                   ),
                 ),
